@@ -6,9 +6,8 @@
 #include "BluetoothSerial.h"
 #include <Wire.h> // Tambahkan library Wire untuk GY521 (I2C)
 
-// =================================================================
 // 1. DEKLARASI OBJEK
-// =================================================================
+
 GY521 sensor(0x68);
 TinyGPSPlus gps;
 BluetoothSerial SerialBT;
@@ -18,9 +17,7 @@ const int voltPin = 34;    // Voltage sensor
 const int tempPin = 26;    // Temp and humidity sensor
 const int LDRPin = 35;     // LDR sensor
 
-// =================================================================
 // 2. DEKLARASI VARIABEL GLOBAL
-// =================================================================
 String tanggal = "Not valid";
 String waktu = "Not valid";
 
@@ -43,9 +40,7 @@ unsigned long sensslowMillis = 0;
 unsigned long senssmidMillis = 0;
 unsigned long senssfstMillis = 0;
 
-// =================================================================
 // 3. PROTOTYPE FUNGSI
-// =================================================================
 void sensor_init();
 void sensor_read();
 void imu_init();
@@ -57,9 +52,7 @@ void lumen_read();
 void gps_read();
 
 
-// =================================================================
 // 4. FUNGSI UTAMA (setup dan loop)
-// =================================================================
 
 void setup() {
   Serial.begin(250000);
@@ -81,9 +74,7 @@ void loop() {
 }
 
 
-// =================================================================
 // 5. DEFINISI FUNGSI PEMBANTU
-// =================================================================
 
 void sensor_init() {
   imu_init();
